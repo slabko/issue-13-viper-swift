@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ListPresenter : NSObject, ListInteractorOutput, ListModuleInterface, AddModuleDelegate {
+class ListPresenter : NSObject, ListInteractorOutput, ListModuleInterface {
     var listInteractor : ListInteractorInput?
     var listWireframe : ListWireframe?
     var userInterface : ListViewInterface?
@@ -39,13 +39,5 @@ class ListPresenter : NSObject, ListInteractorOutput, ListModuleInterface, AddMo
     
     func addNewEntry() {
         listWireframe?.presentAddInterface()
-    }
-    
-    func addModuleDidCancelAddAction() {
-        // No action necessary
-    }
-    
-    func addModuleDidSaveAddAction() {
-        updateView()
     }
 }

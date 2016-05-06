@@ -12,10 +12,10 @@ class ListInteractor : NSObject, ListInteractorInput {
     var output : ListInteractorOutput?
     
     let clock : Clock
-    let dataManager : ListDataManager
+    var dataStore : DataStore
     
-    init(dataManager: ListDataManager, clock: Clock) {
-        self.dataManager = dataManager
+    init(dataStore: DataStore, clock: Clock) {
+        self.dataStore = dataStore
         self.clock = clock
     }
     
@@ -23,7 +23,7 @@ class ListInteractor : NSObject, ListInteractorInput {
         let today = clock.today()
         let endOfNextWeek = NSCalendar.currentCalendar().dateForEndOfFollowingWeekWithDate(today)
         
-        dataManager.todoItemsBetweenStartDate(today,
+        todoItemsBetweenStartDate(today,
             endDate: endOfNextWeek,
             completion: { todoItems in
                 let upcomingItems = self.upcomingItemsFromToDoItems(todoItems)
@@ -43,5 +43,32 @@ class ListInteractor : NSObject, ListInteractorInput {
         }
         
         return upcomingItems
+    }
+
+    func todoItemsBetweenStartDate(startDate: NSDate, endDate: NSDate, completion: (([TodoItem]) -> Void)!) {
+        let calendar = NSCalendar.autoupdatingCurrentCalendar()
+        let beginning = calendar.dateForBeginningOfDay(startDate)
+        let end = calendar.dateForEndOfDay(endDate)
+        
+        let predicate = NSPredicate(format: "(date >= %@) AND (date <= %@)", beginning, end)
+        let sortDescriptors = []
+        
+        dataStore.fetchEntriesWithPredicate(predicate,
+            sortDescriptors: sortDescriptors as [AnyObject],
+            completionBlock: { entries in
+                let todoItems = self.todoItemsFromDataStoreEntries(entries)
+                completion(todoItems)
+        })
+    }
+    
+    func todoItemsFromDataStoreEntries(entries: [ManagedTodoItem]) -> [TodoItem] {
+        var todoItems : [TodoItem] = []
+        
+        for managedTodoItem in entries {
+            let todoItem = TodoItem(dueDate: managedTodoItem.date, name: managedTodoItem.name as String)
+            todoItems.append(todoItem)
+        }
+        
+        return todoItems
     }
 }

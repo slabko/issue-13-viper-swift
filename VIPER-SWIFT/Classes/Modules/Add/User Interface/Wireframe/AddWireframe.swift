@@ -15,8 +15,10 @@ class AddWireframe : NSObject, UIViewControllerTransitioningDelegate {
 
     var addPresenter : AddPresenter?
     var presentedViewController : UIViewController?
+    weak var presentingViewController : UIViewController?
     
     func presentAddInterfaceFromViewController(viewController: UIViewController) {
+        presentingViewController = viewController
         let newViewController = addViewController()
         newViewController.eventHandler = addPresenter
         newViewController.modalPresentationStyle = .Custom
@@ -30,7 +32,10 @@ class AddWireframe : NSObject, UIViewControllerTransitioningDelegate {
     }
     
     func dismissAddInterface() {
-        presentedViewController?.dismissViewControllerAnimated(true, completion: nil)
+        presentingViewController?.viewWillAppear(true)
+        presentedViewController?.dismissViewControllerAnimated(true, completion: { _ in 
+            self.presentingViewController?.viewDidAppear(true)
+        })
     }
     
     func addViewController() -> AddViewController {

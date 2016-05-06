@@ -17,8 +17,6 @@
 		261FA1C419414A720029F589 /* TODO.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 261FA18719414A720029F589 /* TODO.xcdatamodeld */; };
 		261FA1C519414A720029F589 /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA18A19414A720029F589 /* RootWireframe.swift */; };
 		261FA1C619414A720029F589 /* AddInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA18F19414A720029F589 /* AddInteractor.swift */; };
-		261FA1C719414A720029F589 /* AddDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA19119414A720029F589 /* AddDataManager.swift */; };
-		261FA1C819414A720029F589 /* AddModuleDelegateInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA19419414A720029F589 /* AddModuleDelegateInterface.swift */; };
 		261FA1C919414A720029F589 /* AddModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA19519414A720029F589 /* AddModuleInterface.swift */; };
 		261FA1CA19414A720029F589 /* AddPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA19819414A720029F589 /* AddPresenter.swift */; };
 		261FA1CB19414A720029F589 /* AddDismissalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA19A19414A720029F589 /* AddDismissalTransition.swift */; };
@@ -29,7 +27,6 @@
 		261FA1D019414A720029F589 /* ListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA1A419414A720029F589 /* ListInteractor.swift */; };
 		261FA1D119414A720029F589 /* ListInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA1A519414A720029F589 /* ListInteractorIO.swift */; };
 		261FA1D219414A720029F589 /* UpcomingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA1A619414A720029F589 /* UpcomingItem.swift */; };
-		261FA1D319414A720029F589 /* ListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA1A819414A720029F589 /* ListDataManager.swift */; };
 		261FA1D419414A720029F589 /* ListModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA1AB19414A720029F589 /* ListModuleInterface.swift */; };
 		261FA1D519414A720029F589 /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA1AE19414A720029F589 /* ListPresenter.swift */; };
 		261FA1D619414A720029F589 /* UpcomingDisplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA1AF19414A720029F589 /* UpcomingDisplayData.swift */; };
@@ -57,11 +54,13 @@
 		26D96FA91942932A00F117F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 261FA1EA1942320E0029F589 /* Main.storyboard */; };
 		26D96FAA1942932A00F117F5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 261FA1ED194232180029F589 /* Images.xcassets */; };
 		26D96FAC1942967900F117F5 /* RelativeDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D96FAB1942967900F117F5 /* RelativeDateTests.swift */; };
-		26D96FAE19429A9000F117F5 /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D96FAD19429A9000F117F5 /* DataTests.swift */; };
 		26D96FAF19429AD000F117F5 /* ManagedTodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA1E619414CBE0029F589 /* ManagedTodoItem.swift */; };
 		26D96FB019429AD000F117F5 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA18319414A720029F589 /* CoreDataStore.swift */; };
 		26D96FB119429B1A00F117F5 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA18119414A720029F589 /* TodoItem.swift */; };
-		26D96FB219429B1A00F117F5 /* ListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA1A819414A720029F589 /* ListDataManager.swift */; };
+		4FEC0CFE1CDC91FE003539E0 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEC0CFD1CDC91FE003539E0 /* Swinject.framework */; };
+		4FEC0CFF1CDC91FE003539E0 /* Swinject.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEC0CFD1CDC91FE003539E0 /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4FEC0D031CDCA19A003539E0 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEC0D021CDCA19A003539E0 /* DataStore.swift */; };
+		4FEC0D041CDCA3DA003539E0 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEC0D021CDCA19A003539E0 /* DataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +72,20 @@
 			remoteInfo = "VIPER-SWIFT";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4FEC0D001CDC91FE003539E0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4FEC0CFF1CDC91FE003539E0 /* Swinject.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		261FA14E1941497E0029F589 /* VIPER-SWIFT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VIPER-SWIFT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,8 +101,6 @@
 		261FA18819414A720029F589 /* TODO.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TODO.xcdatamodel; sourceTree = "<group>"; };
 		261FA18A19414A720029F589 /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootWireframe.swift; sourceTree = "<group>"; };
 		261FA18F19414A720029F589 /* AddInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddInteractor.swift; sourceTree = "<group>"; };
-		261FA19119414A720029F589 /* AddDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDataManager.swift; sourceTree = "<group>"; };
-		261FA19419414A720029F589 /* AddModuleDelegateInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddModuleDelegateInterface.swift; sourceTree = "<group>"; };
 		261FA19519414A720029F589 /* AddModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddModuleInterface.swift; sourceTree = "<group>"; };
 		261FA19819414A720029F589 /* AddPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPresenter.swift; sourceTree = "<group>"; };
 		261FA19A19414A720029F589 /* AddDismissalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDismissalTransition.swift; sourceTree = "<group>"; };
@@ -100,7 +111,6 @@
 		261FA1A419414A720029F589 /* ListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListInteractor.swift; sourceTree = "<group>"; };
 		261FA1A519414A720029F589 /* ListInteractorIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListInteractorIO.swift; sourceTree = "<group>"; };
 		261FA1A619414A720029F589 /* UpcomingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingItem.swift; sourceTree = "<group>"; };
-		261FA1A819414A720029F589 /* ListDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDataManager.swift; sourceTree = "<group>"; };
 		261FA1AB19414A720029F589 /* ListModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListModuleInterface.swift; sourceTree = "<group>"; };
 		261FA1AE19414A720029F589 /* ListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
 		261FA1AF19414A720029F589 /* UpcomingDisplayData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingDisplayData.swift; sourceTree = "<group>"; };
@@ -117,7 +127,8 @@
 		26A605EA1942A1EE0036C71F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26D96F9B19428C3600F117F5 /* CalendarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTests.swift; sourceTree = "<group>"; };
 		26D96FAB1942967900F117F5 /* RelativeDateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelativeDateTests.swift; sourceTree = "<group>"; };
-		26D96FAD19429A9000F117F5 /* DataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
+		4FEC0CFD1CDC91FE003539E0 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = ../Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
+		4FEC0D021CDCA19A003539E0 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FEC0CFE1CDC91FE003539E0 /* Swinject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				26D96F9B19428C3600F117F5 /* CalendarTests.swift */,
-				26D96FAD19429A9000F117F5 /* DataTests.swift */,
 				26D96FAB1942967900F117F5 /* RelativeDateTests.swift */,
 				261FA1641941497E0029F589 /* Supporting Files */,
 			);
@@ -240,6 +251,7 @@
 				261FA18419414A720029F589 /* Entities */,
 				261FA18319414A720029F589 /* CoreDataStore.swift */,
 				261FA18719414A720029F589 /* TODO.xcdatamodeld */,
+				4FEC0D021CDCA19A003539E0 /* DataStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -283,7 +295,6 @@
 			isa = PBXGroup;
 			children = (
 				261FA18E19414A720029F589 /* Interactor */,
-				261FA19019414A720029F589 /* Manager */,
 				261FA19219414A720029F589 /* Model */,
 			);
 			path = "Application Logic";
@@ -297,14 +308,6 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		261FA19019414A720029F589 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				261FA19119414A720029F589 /* AddDataManager.swift */,
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
 		261FA19219414A720029F589 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,7 +318,6 @@
 		261FA19319414A720029F589 /* Module Interface */ = {
 			isa = PBXGroup;
 			children = (
-				261FA19419414A720029F589 /* AddModuleDelegateInterface.swift */,
 				261FA19519414A720029F589 /* AddModuleInterface.swift */,
 			);
 			path = "Module Interface";
@@ -380,7 +382,6 @@
 			isa = PBXGroup;
 			children = (
 				261FA1A319414A720029F589 /* Interactor */,
-				261FA1A719414A720029F589 /* Manager */,
 				261FA1A919414A720029F589 /* Model */,
 			);
 			path = "Application Logic";
@@ -394,14 +395,6 @@
 				261FA1A619414A720029F589 /* UpcomingItem.swift */,
 			);
 			path = Interactor;
-			sourceTree = "<group>";
-		};
-		261FA1A719414A720029F589 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				261FA1A819414A720029F589 /* ListDataManager.swift */,
-			);
-			path = Manager;
 			sourceTree = "<group>";
 		};
 		261FA1A919414A720029F589 /* Model */ = {
@@ -471,9 +464,18 @@
 		261FA1DE19414AC60029F589 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4FEC0D011CDC920A003539E0 /* Frameworks */,
 				261FA1E819414E600029F589 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4FEC0D011CDC920A003539E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4FEC0CFD1CDC91FE003539E0 /* Swinject.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -486,6 +488,7 @@
 				261FA14A1941497E0029F589 /* Sources */,
 				261FA14B1941497E0029F589 /* Frameworks */,
 				261FA14C1941497E0029F589 /* Resources */,
+				4FEC0D001CDC91FE003539E0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -579,7 +582,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				261FA1C719414A720029F589 /* AddDataManager.swift in Sources */,
 				261FA1D119414A720029F589 /* ListInteractorIO.swift in Sources */,
 				261FA1D719414A720029F589 /* UpcomingDisplayDataCollection.swift in Sources */,
 				261FA1D219414A720029F589 /* UpcomingItem.swift in Sources */,
@@ -589,7 +591,6 @@
 				261FA1D619414A720029F589 /* UpcomingDisplayData.swift in Sources */,
 				261FA1C619414A720029F589 /* AddInteractor.swift in Sources */,
 				261FA1D919414A720029F589 /* UpcomingDisplaySection.swift in Sources */,
-				261FA1C819414A720029F589 /* AddModuleDelegateInterface.swift in Sources */,
 				261FA1BF19414A720029F589 /* DeviceClock.swift in Sources */,
 				261FA1DA19414A720029F589 /* ListViewController.swift in Sources */,
 				261FA1BE19414A720029F589 /* Clock.swift in Sources */,
@@ -602,11 +603,11 @@
 				261FA1C219414A720029F589 /* CoreDataStore.swift in Sources */,
 				261FA1CC19414A720029F589 /* AddPresentationTransition.swift in Sources */,
 				261FA1C919414A720029F589 /* AddModuleInterface.swift in Sources */,
-				261FA1D319414A720029F589 /* ListDataManager.swift in Sources */,
 				261FA1CA19414A720029F589 /* AddPresenter.swift in Sources */,
 				261FA1D019414A720029F589 /* ListInteractor.swift in Sources */,
 				261FA1C019414A720029F589 /* NearTermDateRelation.swift in Sources */,
 				261FA1E719414CBE0029F589 /* ManagedTodoItem.swift in Sources */,
+				4FEC0D031CDCA19A003539E0 /* DataStore.swift in Sources */,
 				261FA1D819414A720029F589 /* UpcomingDisplayItem.swift in Sources */,
 				261FA1BC19414A720029F589 /* NSCalendar+CalendarAdditions.swift in Sources */,
 				261FA1DB19414A720029F589 /* ListViewInterface.swift in Sources */,
@@ -620,13 +621,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26D96FB219429B1A00F117F5 /* ListDataManager.swift in Sources */,
 				26D96FAF19429AD000F117F5 /* ManagedTodoItem.swift in Sources */,
 				26D96F9D19428C7E00F117F5 /* NSCalendar+CalendarAdditions.swift in Sources */,
 				26D96FAC1942967900F117F5 /* RelativeDateTests.swift in Sources */,
-				26D96FAE19429A9000F117F5 /* DataTests.swift in Sources */,
 				26D96FA71942913B00F117F5 /* ListModuleInterface.swift in Sources */,
 				26D96FA41942912A00F117F5 /* UpcomingDisplaySection.swift in Sources */,
+				4FEC0D041CDCA3DA003539E0 /* DataStore.swift in Sources */,
 				26D96FA31942912A00F117F5 /* UpcomingDisplayItem.swift in Sources */,
 				26D96F9C19428C3600F117F5 /* CalendarTests.swift in Sources */,
 				26D96FA61942913600F117F5 /* ListViewInterface.swift in Sources */,
@@ -745,6 +745,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "VIPER-SWIFT/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mutualmobile.${PRODUCT_NAME:rfc1034identifier}";
@@ -757,6 +761,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "VIPER-SWIFT/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mutualmobile.${PRODUCT_NAME:rfc1034identifier}";

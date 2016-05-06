@@ -9,10 +9,22 @@
 import Foundation
 
 class AddInteractor : NSObject {
-    var addDataManager : AddDataManager?
+    let dataStore : DataStore
     
+    init(dataStore: DataStore) {
+        self.dataStore = dataStore
+    }
+
     func saveNewEntryWithName(name: NSString, dueDate: NSDate) {
         let newEntry = TodoItem(dueDate: dueDate, name: name as String)
-        addDataManager?.addNewEntry(newEntry)
+        addNewEntry(newEntry)
+    }
+
+    func addNewEntry(entry: TodoItem) {
+        let newEntry = dataStore.newTodoItem()
+        newEntry.name = entry.name
+        newEntry.date = entry.dueDate;
+        
+        dataStore.save()
     }
 }

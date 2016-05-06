@@ -18,7 +18,7 @@ extension Array {
     }
 }
 
-class CoreDataStore : NSObject {
+class CoreDataStore : NSObject, DataStore {
     var persistentStoreCoordinator : NSPersistentStoreCoordinator?
     var managedObjectModel : NSManagedObjectModel
     var managedObjectContext : NSManagedObjectContext
@@ -58,16 +58,11 @@ class CoreDataStore : NSObject {
     }
     
     func newTodoItem() -> ManagedTodoItem {
-        let entityDescription = NSEntityDescription.entityForName("TodoItem", inManagedObjectContext: managedObjectContext)!
-        let newEntry = NSManagedObject(entity: entityDescription, insertIntoManagedObjectContext: managedObjectContext) as! ManagedTodoItem
-        
+        let newEntry = NSEntityDescription.insertNewObjectForEntityForName("TodoItem", inManagedObjectContext: managedObjectContext) as! ManagedTodoItem        
         return newEntry
     }
     
     func save() {
-        do {
-            try managedObjectContext.save()
-        } catch _ {
-        }
+        try! managedObjectContext.save()
     }
 }

@@ -11,17 +11,14 @@ import Foundation
 class AddPresenter : NSObject, AddModuleInterface {
     var addInteractor : AddInteractor?
     var addWireframe : AddWireframe?
-    var addModuleDelegate : AddModuleDelegate?
     
     func cancelAddAction() {
         addWireframe?.dismissAddInterface()
-        addModuleDelegate?.addModuleDidCancelAddAction()
     }
     
     func saveAddActionWithName(name: NSString, dueDate: NSDate) {
         addInteractor?.saveNewEntryWithName(name, dueDate: dueDate);
         addWireframe?.dismissAddInterface()
-        addModuleDelegate?.addModuleDidSaveAddAction()
     }
     
     func configureUserInterfaceForPresentation(addViewUserInterface: AddViewInterface) {

@@ -28,7 +28,6 @@ class ListViewController : UITableViewController, ListViewInterface {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         eventHandler?.updateView()
     }
     

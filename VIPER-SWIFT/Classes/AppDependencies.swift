@@ -24,7 +24,7 @@ class AppDependencies {
 
     func configureDependencies() -> ResolverType {
         let container = Container()
-        container.register(DataStore.self) { _ in CoreDataStore() }
+        container.register(DataStore.self) { _ in MemoryDataStore() }
                  .inObjectScope(.Container)
         container.register(Clock.self) { _ in DeviceClock() }
                  .inObjectScope(.Container)
@@ -37,7 +37,7 @@ class AppDependencies {
         }
         container.register(ListPresenter.self) { _ in ListPresenter() }
         container.register(ListWireframe.self) { r in
-            let wireframe  = ListWireframe()
+            let wireframe  = ListWireframe(resolver: r)
             let interactor = r.resolve(ListInteractor.self)!
             let presenter  = r.resolve(ListPresenter.self)!
             interactor.output = presenter
@@ -45,7 +45,6 @@ class AppDependencies {
             presenter.listWireframe  = wireframe
             wireframe.listPresenter  = presenter
             wireframe.rootWireframe  = r.resolve(RootWireframe.self)
-            wireframe.addWireframe   = r.resolve(AddWireframe.self)
             return wireframe
         }
 

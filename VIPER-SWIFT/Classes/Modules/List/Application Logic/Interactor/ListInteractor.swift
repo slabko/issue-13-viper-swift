@@ -50,25 +50,11 @@ class ListInteractor : NSObject, ListInteractorInput {
         let beginning = calendar.dateForBeginningOfDay(startDate)
         let end = calendar.dateForEndOfDay(endDate)
         
-        let predicate = NSPredicate(format: "(date >= %@) AND (date <= %@)", beginning, end)
-        let sortDescriptors = []
+        let predicate = { (x: TodoItem) -> Bool in x.dueDate >= beginning && x.dueDate <= end }
         
         dataStore.fetchEntriesWithPredicate(predicate,
-            sortDescriptors: sortDescriptors as [AnyObject],
-            completionBlock: { entries in
-                let todoItems = self.todoItemsFromDataStoreEntries(entries)
+            completionBlock: { todoItems in
                 completion(todoItems)
         })
-    }
-    
-    func todoItemsFromDataStoreEntries(entries: [ManagedTodoItem]) -> [TodoItem] {
-        var todoItems : [TodoItem] = []
-        
-        for managedTodoItem in entries {
-            let todoItem = TodoItem(dueDate: managedTodoItem.date, name: managedTodoItem.name as String)
-            todoItems.append(todoItem)
-        }
-        
-        return todoItems
     }
 }

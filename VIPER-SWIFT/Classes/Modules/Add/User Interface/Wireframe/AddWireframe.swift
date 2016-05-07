@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Swinject
 
 let AddViewControllerIdentifier = "AddViewController"
 
@@ -16,7 +17,7 @@ class AddWireframe : NSObject, UIViewControllerTransitioningDelegate {
     var addPresenter : AddPresenter?
     var presentedViewController : UIViewController?
     weak var presentingViewController : UIViewController?
-    
+
     func presentAddInterfaceFromViewController(viewController: UIViewController) {
         presentingViewController = viewController
         let newViewController = addViewController()

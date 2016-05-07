@@ -13,8 +13,6 @@
 		261FA1BF19414A720029F589 /* DeviceClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA17E19414A720029F589 /* DeviceClock.swift */; };
 		261FA1C019414A720029F589 /* NearTermDateRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA18019414A720029F589 /* NearTermDateRelation.swift */; };
 		261FA1C119414A720029F589 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA18119414A720029F589 /* TodoItem.swift */; };
-		261FA1C219414A720029F589 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA18319414A720029F589 /* CoreDataStore.swift */; };
-		261FA1C419414A720029F589 /* TODO.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 261FA18719414A720029F589 /* TODO.xcdatamodeld */; };
 		261FA1C519414A720029F589 /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA18A19414A720029F589 /* RootWireframe.swift */; };
 		261FA1C619414A720029F589 /* AddInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA18F19414A720029F589 /* AddInteractor.swift */; };
 		261FA1C919414A720029F589 /* AddModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA19519414A720029F589 /* AddModuleInterface.swift */; };
@@ -36,7 +34,6 @@
 		261FA1DA19414A720029F589 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA1B419414A720029F589 /* ListViewController.swift */; };
 		261FA1DB19414A720029F589 /* ListViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA1B519414A720029F589 /* ListViewInterface.swift */; };
 		261FA1DC19414A720029F589 /* ListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA1B719414A720029F589 /* ListWireframe.swift */; };
-		261FA1E719414CBE0029F589 /* ManagedTodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA1E619414CBE0029F589 /* ManagedTodoItem.swift */; };
 		261FA1EC1942320E0029F589 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 261FA1EA1942320E0029F589 /* Main.storyboard */; };
 		261FA1EE194232180029F589 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 261FA1ED194232180029F589 /* Images.xcassets */; };
 		26A605EB1942A1EE0036C71F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A605EA1942A1EE0036C71F /* AppDelegate.swift */; };
@@ -54,13 +51,13 @@
 		26D96FA91942932A00F117F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 261FA1EA1942320E0029F589 /* Main.storyboard */; };
 		26D96FAA1942932A00F117F5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 261FA1ED194232180029F589 /* Images.xcassets */; };
 		26D96FAC1942967900F117F5 /* RelativeDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D96FAB1942967900F117F5 /* RelativeDateTests.swift */; };
-		26D96FAF19429AD000F117F5 /* ManagedTodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA1E619414CBE0029F589 /* ManagedTodoItem.swift */; };
-		26D96FB019429AD000F117F5 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA18319414A720029F589 /* CoreDataStore.swift */; };
 		26D96FB119429B1A00F117F5 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FA18119414A720029F589 /* TodoItem.swift */; };
 		4FEC0CFE1CDC91FE003539E0 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEC0CFD1CDC91FE003539E0 /* Swinject.framework */; };
 		4FEC0CFF1CDC91FE003539E0 /* Swinject.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEC0CFD1CDC91FE003539E0 /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4FEC0D031CDCA19A003539E0 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEC0D021CDCA19A003539E0 /* DataStore.swift */; };
 		4FEC0D041CDCA3DA003539E0 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEC0D021CDCA19A003539E0 /* DataStore.swift */; };
+		4FEC0D071CDE32DF003539E0 /* MemoryDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEC0D061CDE32DF003539E0 /* MemoryDataStore.swift */; };
+		4FEC0D091CDE38E6003539E0 /* NSData+Comparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEC0D081CDE38E6003539E0 /* NSData+Comparison.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,8 +94,6 @@
 		261FA17E19414A720029F589 /* DeviceClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceClock.swift; sourceTree = "<group>"; };
 		261FA18019414A720029F589 /* NearTermDateRelation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearTermDateRelation.swift; sourceTree = "<group>"; };
 		261FA18119414A720029F589 /* TodoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
-		261FA18319414A720029F589 /* CoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
-		261FA18819414A720029F589 /* TODO.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TODO.xcdatamodel; sourceTree = "<group>"; };
 		261FA18A19414A720029F589 /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootWireframe.swift; sourceTree = "<group>"; };
 		261FA18F19414A720029F589 /* AddInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddInteractor.swift; sourceTree = "<group>"; };
 		261FA19519414A720029F589 /* AddModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddModuleInterface.swift; sourceTree = "<group>"; };
@@ -120,7 +115,6 @@
 		261FA1B419414A720029F589 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		261FA1B519414A720029F589 /* ListViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewInterface.swift; sourceTree = "<group>"; };
 		261FA1B719414A720029F589 /* ListWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListWireframe.swift; sourceTree = "<group>"; };
-		261FA1E619414CBE0029F589 /* ManagedTodoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedTodoItem.swift; sourceTree = "<group>"; };
 		261FA1E819414E600029F589 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		261FA1EB1942320E0029F589 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "VIPER-SWIFT/Base.lproj/Main.storyboard"; sourceTree = SOURCE_ROOT; };
 		261FA1ED194232180029F589 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "VIPER-SWIFT/Images.xcassets"; sourceTree = SOURCE_ROOT; };
@@ -129,6 +123,8 @@
 		26D96FAB1942967900F117F5 /* RelativeDateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelativeDateTests.swift; sourceTree = "<group>"; };
 		4FEC0CFD1CDC91FE003539E0 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = ../Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
 		4FEC0D021CDCA19A003539E0 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		4FEC0D061CDE32DF003539E0 /* MemoryDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryDataStore.swift; sourceTree = "<group>"; };
+		4FEC0D081CDE38E6003539E0 /* NSData+Comparison.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSData+Comparison.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +218,7 @@
 		261FA17419414A720029F589 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				4FEC0D081CDE38E6003539E0 /* NSData+Comparison.swift */,
 				261FA17919414A720029F589 /* NSCalendar+CalendarAdditions.swift */,
 			);
 			path = Categories;
@@ -248,20 +245,10 @@
 		261FA18219414A720029F589 /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				261FA18419414A720029F589 /* Entities */,
-				261FA18319414A720029F589 /* CoreDataStore.swift */,
-				261FA18719414A720029F589 /* TODO.xcdatamodeld */,
+				4FEC0D061CDE32DF003539E0 /* MemoryDataStore.swift */,
 				4FEC0D021CDCA19A003539E0 /* DataStore.swift */,
 			);
 			path = Store;
-			sourceTree = "<group>";
-		};
-		261FA18419414A720029F589 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				261FA1E619414CBE0029F589 /* ManagedTodoItem.swift */,
-			);
-			path = Entities;
 			sourceTree = "<group>";
 		};
 		261FA18919414A720029F589 /* View */ = {
@@ -592,26 +579,25 @@
 				261FA1C619414A720029F589 /* AddInteractor.swift in Sources */,
 				261FA1D919414A720029F589 /* UpcomingDisplaySection.swift in Sources */,
 				261FA1BF19414A720029F589 /* DeviceClock.swift in Sources */,
+				4FEC0D071CDE32DF003539E0 /* MemoryDataStore.swift in Sources */,
 				261FA1DA19414A720029F589 /* ListViewController.swift in Sources */,
 				261FA1BE19414A720029F589 /* Clock.swift in Sources */,
 				261FA1C519414A720029F589 /* RootWireframe.swift in Sources */,
-				261FA1C419414A720029F589 /* TODO.xcdatamodeld in Sources */,
 				261FA1CD19414A720029F589 /* AddViewController.swift in Sources */,
 				261FA1C119414A720029F589 /* TodoItem.swift in Sources */,
 				26A605EB1942A1EE0036C71F /* AppDelegate.swift in Sources */,
 				261FA1CB19414A720029F589 /* AddDismissalTransition.swift in Sources */,
-				261FA1C219414A720029F589 /* CoreDataStore.swift in Sources */,
 				261FA1CC19414A720029F589 /* AddPresentationTransition.swift in Sources */,
 				261FA1C919414A720029F589 /* AddModuleInterface.swift in Sources */,
 				261FA1CA19414A720029F589 /* AddPresenter.swift in Sources */,
 				261FA1D019414A720029F589 /* ListInteractor.swift in Sources */,
 				261FA1C019414A720029F589 /* NearTermDateRelation.swift in Sources */,
-				261FA1E719414CBE0029F589 /* ManagedTodoItem.swift in Sources */,
 				4FEC0D031CDCA19A003539E0 /* DataStore.swift in Sources */,
 				261FA1D819414A720029F589 /* UpcomingDisplayItem.swift in Sources */,
 				261FA1BC19414A720029F589 /* NSCalendar+CalendarAdditions.swift in Sources */,
 				261FA1DB19414A720029F589 /* ListViewInterface.swift in Sources */,
 				261FA1DC19414A720029F589 /* ListWireframe.swift in Sources */,
+				4FEC0D091CDE38E6003539E0 /* NSData+Comparison.swift in Sources */,
 				261FA1CE19414A720029F589 /* AddViewInterface.swift in Sources */,
 				261FA1CF19414A720029F589 /* AddWireframe.swift in Sources */,
 			);
@@ -621,7 +607,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26D96FAF19429AD000F117F5 /* ManagedTodoItem.swift in Sources */,
 				26D96F9D19428C7E00F117F5 /* NSCalendar+CalendarAdditions.swift in Sources */,
 				26D96FAC1942967900F117F5 /* RelativeDateTests.swift in Sources */,
 				26D96FA71942913B00F117F5 /* ListModuleInterface.swift in Sources */,
@@ -630,7 +615,6 @@
 				26D96FA31942912A00F117F5 /* UpcomingDisplayItem.swift in Sources */,
 				26D96F9C19428C3600F117F5 /* CalendarTests.swift in Sources */,
 				26D96FA61942913600F117F5 /* ListViewInterface.swift in Sources */,
-				26D96FB019429AD000F117F5 /* CoreDataStore.swift in Sources */,
 				26D96FA11942912A00F117F5 /* UpcomingDisplayData.swift in Sources */,
 				26D96FA81942915D00F117F5 /* UpcomingItem.swift in Sources */,
 				26D96F9E19428D8100F117F5 /* NearTermDateRelation.swift in Sources */,
@@ -833,19 +817,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		261FA18719414A720029F589 /* TODO.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				261FA18819414A720029F589 /* TODO.xcdatamodel */,
-			);
-			currentVersion = 261FA18819414A720029F589 /* TODO.xcdatamodel */;
-			path = TODO.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 261FA1461941497E0029F589 /* Project object */;
 }

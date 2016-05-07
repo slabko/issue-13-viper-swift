@@ -8,14 +8,19 @@
 
 import Foundation
 import UIKit
+import Swinject
 
 let ListViewControllerIdentifier = "ListViewController"
 
 class ListWireframe : NSObject {
-    var addWireframe : AddWireframe?
+    let resolver : ResolverType
     var listPresenter : ListPresenter?
     var rootWireframe : RootWireframe?
     var listViewController : ListViewController?
+
+    init(resolver: ResolverType) {
+        self.resolver = resolver
+    }
     
     func presentListInterfaceFromWindow(window: UIWindow) {
         let viewController = listViewControllerFromStoryboard()
@@ -26,7 +31,8 @@ class ListWireframe : NSObject {
     }
     
     func presentAddInterface() {
-        addWireframe?.presentAddInterfaceFromViewController(listViewController!)
+        let addWireframe = resolver.resolve(AddWireframe.self)
+        addWireframe!.presentAddInterfaceFromViewController(listViewController!)
     }
     
     func listViewControllerFromStoryboard() -> ListViewController {

@@ -17,14 +17,7 @@ class AddInteractor : NSObject {
 
     func saveNewEntryWithName(name: NSString, dueDate: NSDate) {
         let newEntry = TodoItem(dueDate: dueDate, name: name as String)
-        addNewEntry(newEntry)
+        dataStore.addTodoItem(newEntry)
     }
 
-    func addNewEntry(entry: TodoItem) {
-        let newEntry = dataStore.newTodoItem()
-        newEntry.name = entry.name
-        newEntry.date = entry.dueDate;
-        
-        dataStore.save()
-    }
 }
